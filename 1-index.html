@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080a09" />
+  <title>Museum of Acceleration</title>
+  <meta name="description" content="An exploded-view study of the machines that make the future arrive." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/"}}</script>
+</head>
+<body>
+  <div id="boot"><span>M/A</span><div class="bootline"><i></i></div><small>ASSEMBLING THE MACHINE</small></div>
+  <canvas id="world" aria-label="Interactive exploded-view model of the fictional HELIOS EUV-7 industrial system"></canvas>
+  <div class="grain"></div>
+  <header>
+    <a class="wordmark" href="#" aria-label="Museum of Acceleration home"><b>M/A</b><span>MUSEUM OF<br>ACCELERATION</span></a>
+    <div class="edition">CHICAGO / 2026<br>PERMANENT COLLECTION 001</div>
+    <button id="aboutBtn" class="text-btn">INDEX +</button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">OBJECT 001 / COMPUTE</p>
+      <h1>HELIOS<br><em>EUV-7</em></h1>
+      <p class="dek">A speculative anatomy of the machine<br>that prints tomorrow.</p>
+    </section>
+
+    <aside class="readout" aria-live="polite">
+      <div class="rule"></div>
+      <p class="counter"><span id="partNo">00</span> / 07</p>
+      <h2 id="partTitle">SYSTEM VIEW</h2>
+      <p id="partDesc">A fictional extreme-ultraviolet lithography system, separated into its essential organs.</p>
+      <button id="resetView">RETURN TO SYSTEM</button>
+    </aside>
+
+    <div class="controls">
+      <label for="explode">ASSEMBLY <output id="percent">38%</output></label>
+      <input id="explode" type="range" min="0" max="100" value="38" aria-label="Explode model" />
+      <div class="control-row">
+        <button id="autoRotate"><i></i> ORBIT: ON</button>
+        <span>DRAG TO INSPECT</span>
+        <span>SCROLL TO SCALE</span>
+      </div>
+    </div>
+
+    <nav class="chapters" aria-label="Machine parts">
+      <button data-part="0" class="active"><b>00</b><span>SYSTEM</span></button>
+      <button data-part="1"><b>01</b><span>LIGHT</span></button>
+      <button data-part="2"><b>02</b><span>MIRRORS</span></button>
+      <button data-part="3"><b>03</b><span>MASK</span></button>
+      <button data-part="4"><b>04</b><span>WAFER</span></button>
+      <button data-part="5"><b>05</b><span>VACUUM</span></button>
+      <button data-part="6"><b>06</b><span>COMPUTE</span></button>
+      <button data-part="7"><b>07</b><span>POWER</span></button>
+    </nav>
+  </main>
+
+  <div id="labels" aria-hidden="true"></div>
+  <div class="status"><i></i><span>SIMULATION LIVE</span><span id="fps">60 FPS</span></div>
+
+  <section id="indexPanel" class="panel" aria-hidden="true">
+    <button id="closePanel" aria-label="Close index">×</button>
+    <div class="panel-kicker">A FIELD GUIDE TO</div>
+    <h2>THE MACHINES<br>THAT MOVE<br>HISTORY.</h2>
+    <p>Museum of Acceleration is a digital collection dedicated to the systems behind material progress. This first object is speculative, informed by the scale and complexity of real EUV lithography.</p>
+    <ol>
+      <li><span>001</span> HELIOS EUV-7 <b>ON VIEW</b></li>
+      <li><span>002</span> ORBITAL LAUNCH STACK <i>SOON</i></li>
+      <li><span>003</span> FUSION TOKAMAK <i>SOON</i></li>
+      <li><span>004</span> HUMANOID ACTUATOR <i>SOON</i></li>
+    </ol>
+    <footer>MORE ENERGY. MORE COMPUTE. MORE LIFE.</footer>
+  </section>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
